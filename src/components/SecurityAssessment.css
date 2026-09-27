@@ -1,0 +1,629 @@
+/* ── SecurityAssessment.css ── */
+
+.security-assessment-viewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+/* Header Banner */
+.sa-header-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.sa-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.sa-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sa-threat-posture-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.sa-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sa-header-content h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.sa-header-content p {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  margin: 0;
+  max-width: 780px;
+  line-height: 1.5;
+}
+
+.sa-header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.sa-kpi-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.6rem 1.1rem;
+  min-width: 110px;
+}
+
+.sa-kpi-pill .kpi-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.sa-kpi-pill .kpi-label {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+/* Sections */
+.sa-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.sa-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sa-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sa-section-title h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sa-section-title p {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 0.2rem 0 0 0;
+}
+
+.sa-pill-info {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.sa-pill-info.purple,
+.sa-pill-info.emerald {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 1. Vectors Layout */
+.sa-vectors-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.25rem;
+}
+
+.sa-vectors-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.sa-vector-card-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sa-vector-card-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(2px);
+}
+
+.sa-vector-card-btn.active {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: none;
+}
+
+.sa-v-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sa-v-id {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.sa-severity-chip {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.sa-severity-chip.critical,
+.sa-severity-chip.high {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.sa-severity-chip.medium,
+.sa-severity-chip.low {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sa-v-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sa-v-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+
+.sa-v-layer {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-family: monospace;
+}
+
+.sa-status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 9999px;
+}
+
+.sa-status-badge.mitigated, .sa-status-badge.blocked, .sa-status-badge.monitored {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sa-status-badge.vulnerable {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* Detail Panel */
+.sa-vector-details-panel {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.vector-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.v-head-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.v-category-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.v-head-info h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.v-layer-indicator {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.v-layer-indicator code {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.v-status-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.v-stat-label {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.v-stat-value {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.v-stat-value.blocked, .v-stat-value.mitigated {
+  color: #ffffff;
+}
+
+.v-stat-value.vulnerable {
+  color: #ef4444;
+}
+
+.vector-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.vector-box {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.vector-box.highlight {
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+}
+
+.vector-box.success {
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+}
+
+.v-box-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.vector-box p {
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 2. MITRE Table */
+.mitre-table-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.mitre-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.mitre-matrix-table thead {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mitre-matrix-table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mitre-matrix-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  vertical-align: middle;
+}
+
+.mitre-matrix-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mitre-id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: monospace;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.tech-name-cell {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tactic-chip {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.detection-cell {
+  max-width: 320px;
+  line-height: 1.4;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+}
+
+.telemetry-badge {
+  font-size: 0.72rem;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.coverage-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.coverage-badge.full,
+.coverage-badge.partial {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 3. Roadmap */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roadmap-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.roadmap-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.roadmap-card.selected {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+
+.rm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rm-phase-tag {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.rm-priority-chip {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.rm-priority-chip.p0 {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.rm-priority-chip.p1,
+.rm-priority-chip.p2 {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rm-status-chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.rm-status-chip.completed,
+.rm-status-chip.in-progress,
+.rm-status-chip.scheduled {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rm-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.rm-horizon {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.rm-desc {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.rm-deliverables-list {
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.deliv-head {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.rm-deliverables-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rm-deliverables-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: #e2e8f0;
+  line-height: 1.35;
+}

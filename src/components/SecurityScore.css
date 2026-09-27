@@ -1,0 +1,501 @@
+/* ── SecurityScore.css ── */
+
+.security-score-viewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Header */
+.ss-header-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.ss-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.ss-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ss-header-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ss-score-grade {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.ss-score-grade.flawless {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+.ss-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ss-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dim-points-deducted.clean {
+  color: #ffffff;
+}
+
+.ledger-total-tag.clean {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ss-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ss-header-content h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.ss-header-content p {
+  color: #94a3b8;
+  font-size: 0.86rem;
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.composite-score-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.85rem 1.35rem;
+  flex-shrink: 0;
+}
+
+.c-score-circle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.c-val {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: monospace;
+  line-height: 1;
+}
+
+.c-max {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.c-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.c-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.c-status {
+  font-size: 0.72rem;
+  color: #ffffff;
+}
+
+/* Formula Card */
+.formula-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.formula-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.formula-card-head h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.formula-card-head p {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0.15rem 0 0 0;
+}
+
+.formula-equation-box {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.formula-text {
+  font-family: 'Fragment Mono', monospace, monospace;
+  font-size: 0.95rem;
+  color: #f1f5f9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.f-sym {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.f-term {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.f-w {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.f-sub {
+  font-weight: 700;
+}
+
+.formula-calc-eval {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.formula-calc-eval strong {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Dimensions Grid */
+.dimensions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .dimensions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dim-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dim-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.dim-card.active {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+
+.dim-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dim-symbol {
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.dim-weight-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.dim-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.dim-score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dim-score-val {
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.dim-points-deducted {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f87171;
+  font-family: monospace;
+}
+
+.dim-progress-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 0.2rem 0;
+}
+
+.dim-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.dim-contribution {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.dim-contribution strong {
+  color: #ffffff;
+}
+
+.dim-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0.2rem 0 0 0;
+}
+
+/* Deduction Ledger */
+.ledger-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: none;
+}
+
+.ledger-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.l-head-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.l-head-title h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.l-head-title p {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0.15rem 0 0 0;
+}
+
+.ledger-total-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.ledger-table thead {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ledger-table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.ledger-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  vertical-align: middle;
+}
+
+.ledger-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.finding-link-badge {
+  font-family: monospace;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.dim-chip code {
+  font-family: monospace;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.deduction-val {
+  font-family: monospace;
+  font-weight: 800;
+  color: #ef4444;
+  font-size: 0.88rem;
+}
+
+.ledger-sev-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.ledger-sev-badge.critical,
+.ledger-sev-badge.high {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.ledger-sev-badge.medium,
+.ledger-sev-badge.low {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ledger-reason-cell {
+  max-width: 420px;
+  line-height: 1.4;
+  color: #e2e8f0;
+}
+
+.ledger-time {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+}

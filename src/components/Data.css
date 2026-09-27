@@ -1,0 +1,180 @@
+.data-layout-container {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* ── LEFT DOCKER (FULLY TRANSPARENT) ── */
+.data-left-docker {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  position: sticky;
+  top: 100px;
+}
+
+.data-docker-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+}
+
+.data-docker-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-docker-count {
+  font-size: 10.5px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.data-docker-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.data-docker-nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.data-docker-nav-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.data-docker-nav-item.active {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.data-nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.data-nav-item-left span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-docker-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.data-pill-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.data-pill-badge.cyan,
+.data-pill-badge.purple,
+.data-pill-badge.green {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Status Callout Footer */
+.data-docker-footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.data-footer-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.data-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.data-footer-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.data-footer-desc {
+  font-size: 10.5px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* ── MAIN CONTENT ── */
+.data-main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 980px) {
+  .data-layout-container {
+    flex-direction: column;
+  }
+  .data-left-docker {
+    width: 100%;
+    position: static;
+  }
+}

@@ -1,0 +1,404 @@
+/* ── NetworkVisualization.css ── */
+
+.network-vis-viewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Header */
+.net-header-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.net-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.net-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.net-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.legend-chip .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-chip.aead .dot { background: #ffffff; box-shadow: 0 0 6px rgba(255, 255, 255, 0.6); }
+.legend-chip.cbc .dot { background: #aaaaaa; box-shadow: 0 0 6px rgba(170, 170, 170, 0.6); }
+.legend-chip.vulnerable .dot { background: #ef4444; box-shadow: 0 0 6px #ef4444; }
+
+.net-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.net-header-content h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.net-header-content p {
+  color: #888888;
+  font-size: 0.86rem;
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.net-filter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  flex-shrink: 0;
+}
+
+.net-select {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.net-select option {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Canvas Card */
+.topology-canvas-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.25rem;
+  background: #080808;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ch-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ch-right {
+  font-size: 0.74rem;
+  color: #777777;
+  font-style: italic;
+}
+
+.svg-wrapper {
+  width: 100%;
+  height: 480px;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.topology-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── SVG Elements (STRICTLY FIXED - NO TRANSLATIONAL SHIFT ON HOVER/CLICK) ── */
+.tunnel-link-group {
+  cursor: pointer;
+}
+
+.link-hitbox {
+  cursor: pointer;
+}
+
+.link-path {
+  transition: stroke-width 0.15s ease, filter 0.15s ease;
+}
+
+.tunnel-link-group:hover .link-path {
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.link-path.selected {
+  stroke-width: 3.5;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.animated-flow-dot {
+  opacity: 0.9;
+}
+
+/* Midpoint Badge - Fixed position, no transform scaling */
+.link-mid-rect {
+  transition: fill 0.15s ease, stroke-width 0.15s ease, filter 0.15s ease;
+}
+
+.tunnel-link-group:hover .link-mid-rect {
+  fill: #111111;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
+}
+
+.tunnel-link-group.selected .link-mid-rect {
+  fill: #141414;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+/* Gateway Node Group - Strictly Fixed in Place */
+.node-group {
+  cursor: pointer;
+  /* NO transform! Elements remain completely fixed in their place */
+}
+
+.node-circle {
+  transition: stroke 0.15s ease, stroke-width 0.15s ease, filter 0.15s ease;
+}
+
+.node-group:hover .node-circle {
+  stroke: #ffffff;
+  stroke-width: 2.8;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
+.node-group:hover .node-name-text {
+  fill: #ffffff;
+}
+
+.node-group.selected .node-circle {
+  stroke: #ffffff;
+  stroke-width: 3.2;
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.85));
+}
+
+.node-aura {
+  transition: stroke-opacity 0.2s ease, stroke-width 0.2s ease;
+}
+
+/* Pulsing Aura uses stroke-opacity and stroke-width ONLY, never transform: scale */
+.pulsing-aura {
+  animation: auraGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes auraGlow {
+  0%, 100% {
+    stroke-opacity: 0.35;
+    stroke-width: 1px;
+  }
+  50% {
+    stroke-opacity: 0.95;
+    stroke-width: 2.2px;
+  }
+}
+
+.node-status-core {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.node-name-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Dossier Grid */
+.net-dossier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .net-dossier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.net-dossier-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8);
+}
+
+.dossier-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.dossier-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.dossier-header p {
+  font-size: 0.78rem;
+  color: #888888;
+  margin: 0.15rem 0 0 0;
+}
+
+.dossier-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.d-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.d-health-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.d-health-chip.healthy {
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.d-health-chip.degraded {
+  color: #ffffff;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.d-crypto-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.d-crypto-chip.aead {
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.d-crypto-chip.cbc {
+  color: #cccccc;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.d-crypto-chip.vulnerable {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.dossier-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.d-spec-cell {
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.d-spec-cell .lbl {
+  font-size: 0.68rem;
+  color: #777777;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.d-spec-cell .val {
+  font-size: 0.86rem;
+  color: #ffffff;
+}
+
+.d-spec-cell code {
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 0.82rem;
+}

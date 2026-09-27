@@ -1,0 +1,331 @@
+/* EngineDiagnostics.css - Clean Transparent Hardware Offload View */
+
+.engine-diagnostics-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Action Bar */
+.diag-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.diag-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.diag-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.diag-sub-text {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.diag-bench-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 6px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.diag-bench-btn:hover:not(:disabled) {
+  background: rgba(34, 197, 94, 0.22);
+  border-color: #22c55e;
+}
+
+.diag-bench-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.bench-result-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+  font-size: 0.78rem;
+}
+
+/* Hardware Cards Grid */
+.hw-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.hw-card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hw-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hw-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hw-icon-box.green { color: #22c55e; border-color: rgba(34, 197, 94, 0.35); }
+.hw-icon-box.cyan { color: #00f0ff; border-color: rgba(0, 240, 255, 0.35); }
+.hw-icon-box.purple { color: #c084fc; border-color: rgba(192, 132, 252, 0.35); }
+
+.hw-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.hw-status-pill.green {
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.hw-status-pill.cyan {
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+}
+
+.hw-status-pill.purple {
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+.hw-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.hw-title-row h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.hw-tag {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.hw-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.hw-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hw-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.hw-metric-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hw-metric-val.green { color: #22c55e; }
+.hw-metric-val.cyan { color: #00f0ff; }
+.hw-metric-val.purple { color: #c084fc; }
+
+.hw-metric-lbl {
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+/* XFRM Cache Card */
+.xfrm-cache-card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.xfrm-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.xfrm-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.xfrm-card-subtitle {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0.2rem 0 0;
+}
+
+.xfrm-count-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: transparent;
+}
+
+.xfrm-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.xfrm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  text-align: left;
+}
+
+.xfrm-table th {
+  padding: 0.65rem 0.75rem;
+  color: #64748b;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.xfrm-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+}
+
+.mono-cell {
+  font-family: 'JetBrains Mono', monospace;
+  color: #00f0ff;
+  font-size: 0.75rem;
+}
+
+.ip-cell {
+  font-family: 'JetBrains Mono', monospace;
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.num-cell {
+  font-family: 'JetBrains Mono', monospace;
+  color: #f8fafc;
+}
+
+.proto-chip {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.proto-chip.esp {
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+}
+
+.proto-chip.ah {
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+.offload-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.offload-status.hw {
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.offload-status.avx {
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+}
+
+.offload-status.kernel {
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}

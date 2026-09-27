@@ -1,0 +1,181 @@
+/* ── Network.css ── */
+
+.network-layout-container {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .network-layout-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Left Side Docker (3 Menus) ── */
+.network-left-docker {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  position: sticky;
+  top: 90px;
+}
+
+.net-docker-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.net-docker-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.net-docker-count {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+}
+
+.net-docker-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.net-docker-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.net-docker-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
+}
+
+.net-docker-nav-item.active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.net-nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.net-docker-icon {
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+  transition: transform 0.18s ease;
+}
+
+.net-docker-nav-item.active .net-docker-icon {
+  transform: scale(1.1);
+}
+
+.net-pill-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.18rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.net-pill-badge.cyan,
+.net-pill-badge.purple,
+.net-pill-badge.green {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Docker Footer */
+.net-docker-footer {
+  margin-top: 0.5rem;
+  padding: 0.85rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.net-footer-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.net-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.net-footer-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.net-footer-desc {
+  font-size: 0.7rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* Main Viewport */
+.network-main-viewport {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,327 @@
+/* SystemHealth.css - Clean Transparent Microservices Telemetry View */
+
+.system-health-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Hero Bar */
+.health-hero-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1.35rem 1.65rem;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.health-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.health-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.health-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.health-section-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.45;
+}
+
+.health-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.last-sync-text {
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+.last-sync-text strong {
+  color: #ffffff;
+}
+
+.pulse-trigger-btn,
+.pulse-trigger-btn *,
+.pulse-trigger-btn span,
+.pulse-trigger-btn svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+.pulse-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pulse-trigger-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
+}
+
+.pulse-notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+/* KPI Tiles Grid */
+.pulse-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.pulse-kpi-card {
+  padding: 1.25rem 1.4rem;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpi-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpi-title {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.kpi-status-dot.online {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.kpi-main-val {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0.2rem 0;
+  color: #ffffff;
+}
+
+.kpi-main-val.green,
+.kpi-main-val.cyan,
+.kpi-main-val.purple {
+  color: #ffffff;
+}
+
+.kpi-sub-text {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Detailed Services Grid */
+.services-detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.service-health-card {
+  padding: 1.6rem 1.75rem;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.service-health-card:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 44px -8px rgba(0, 0, 0, 0.95);
+  transform: translateY(-2px);
+}
+
+.svc-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svc-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.svc-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.svc-icon-box.fastapi,
+.svc-icon-box.database,
+.svc-icon-box.scapy,
+.svc-icon-box.celery {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.svc-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.svc-cat {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.svc-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.svc-status-pill.green {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.svc-telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.telem-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.telem-lbl {
+  font-size: 0.65rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.telem-val {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.telem-val.green {
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.svc-specs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.74rem;
+}
+
+.spec-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.spec-key {
+  color: #64748b;
+}
+
+.spec-val {
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-align: right;
+}

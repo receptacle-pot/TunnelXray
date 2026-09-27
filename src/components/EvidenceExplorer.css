@@ -1,0 +1,222 @@
+/* ── EvidenceExplorer.css ── */
+
+.evidence-explorer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.evidence-header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.35rem 1.65rem;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.evidence-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.search-filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.evidence-search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.5rem 0.95rem;
+  color: #ffffff;
+  font-size: 0.8rem;
+  width: 260px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.evidence-search-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.protocol-filter-select {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.protocol-filter-select:focus,
+.protocol-filter-select:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: #050507;
+}
+
+.protocol-filter-select option {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  padding: 0.5rem 0.75rem;
+}
+
+
+/* Two-Column Master / Detail View */
+.evidence-split-viewport {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .evidence-split-viewport {
+    grid-template-columns: 1fr;
+  }
+}
+
+.evidence-list-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.evidence-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.78rem;
+}
+
+.evidence-table th {
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+}
+
+.evidence-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.evidence-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.evidence-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.evidence-row.is-active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Detail Forensic Hex & ASCII Inspector */
+.forensic-inspector-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.offset-tag-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.offset-pill {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.offset-pill:hover, .offset-pill.highlighted {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hex-ascii-split-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #050507;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #ffffff;
+  overflow-x: auto;
+}
+
+.hex-row-line {
+  display: flex;
+  gap: 1.25rem;
+  white-space: pre;
+}
+
+.hex-offset-col {
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+}
+
+.hex-bytes-col {
+  color: #ffffff;
+}
+
+.hex-bytes-col.highlight-spi {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.ascii-chars-col {
+  color: #ffffff;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding-left: 1rem;
+}

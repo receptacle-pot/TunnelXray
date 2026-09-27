@@ -1,0 +1,384 @@
+/* ── PolicyCompliance.css ── */
+
+.policy-compliance-viewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Header */
+.pol-header-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.pol-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.pol-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pol-header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pol-compliance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.pol-compliance-badge.all-pass {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pol-remediate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pol-remediate-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pol-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.pol-header-content h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.pol-header-content p {
+  color: #94a3b8;
+  font-size: 0.86rem;
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.pol-kpi-summary {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.pol-kpi-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.5rem 0.85rem;
+  min-width: 65px;
+}
+
+.pol-kpi-pill .num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.pol-kpi-pill.pass .num { color: #ffffff; }
+.pol-kpi-pill.fail .num { color: #ef4444; }
+.pol-kpi-pill.warning .num { color: #ffffff; }
+
+.pol-kpi-pill .lbl {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Mandates Summary Cards */
+.mandates-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+}
+
+@media (max-width: 1200px) {
+  .mandates-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mandate-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.m-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.m-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.m-card-req {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.m-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.35rem;
+}
+
+.m-card-status.pass {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.m-card-status.fail {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* Table Card */
+.pol-table-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: none;
+}
+
+.pol-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pol-table-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.pol-table-title h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.pol-table-title p {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0.15rem 0 0 0;
+}
+
+.pol-select {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.pol-select option {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.policy-table thead {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.policy-table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.policy-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  vertical-align: middle;
+}
+
+.pol-row:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pol-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.pol-status-badge.pass,
+.pol-status-badge.warning {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pol-status-badge.fail {
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.pol-name-cell {
+  max-width: 260px;
+}
+
+.p-name {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.35;
+}
+
+.p-source {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.pol-thresh-cell {
+  font-size: 0.8rem;
+  max-width: 250px;
+  line-height: 1.4;
+  color: #cbd5e1;
+}
+
+.pol-observed-cell code {
+  color: #ef4444;
+  font-family: monospace;
+  font-size: 0.78rem;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.pol-row.pass .pol-observed-cell code {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gw-chip {
+  font-size: 0.74rem;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.pol-action-cell {
+  font-size: 0.78rem;
+  max-width: 260px;
+  line-height: 1.4;
+  color: #e2e8f0;
+}

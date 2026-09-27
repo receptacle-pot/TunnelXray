@@ -1,0 +1,761 @@
+/* ── BlackBoxTheme (applied via TransparentTheme.css) ──
+   High-contrast solid black box styling across all tabs:
+   - Converts all transparent cards, toolbars, left dockers, and sub-panels to solid black boxes
+   - Sharp subtle borders (rgba(255, 255, 255, 0.14)) with deep drop shadows
+   - Maintains strict two-color text rule (White and Red for alerts)
+*/
+
+/* 1. All primary cards, outer containers, toolbars, left dockers, and subviews converted to SOLID BLACK boxes across all tabs */
+[class$="-card"],
+[class$="-panel"],
+[class$="-docker"],
+[class$="-toolbar"],
+[class$="-drawer"],
+[class$="-banner"],
+[class$="-container-card"],
+[class$="-section-card"],
+[class$="-table-card"],
+[class$="-header-card"],
+.analysis-left-docker,
+.security-left-docker,
+.network-left-docker,
+.data-left-docker,
+.reports-left-docker,
+.system-left-docker,
+.scenario-toolbar,
+.soc-card,
+.radar-chart-card,
+.dimension-bars-card,
+.bar-breakdown-card,
+.tunnels-table-card,
+.tunnels-table-wrap,
+.audit-history-card,
+.audit-card,
+.audit-table-card,
+.audit-controls-card,
+.audit-stat-card,
+.audit-stats-strip,
+.audit-hero-bar,
+.audit-status-banner,
+.net-header-card,
+.tb-header-card,
+.comp-header-card,
+.history-header-card,
+.dataset-header-card,
+.registry-header-card,
+.sa-header-card,
+.findings-header-card,
+.finding-details-header-card,
+.fd-header-card,
+.score-header-card,
+.ss-header-card,
+.ai-header-card,
+.pol-header-card,
+.topology-canvas-card,
+.sa-vector-details-panel,
+.mitre-table-card,
+.roadmap-card,
+.finding-card,
+.findings-table-card,
+.findings-controls-bar,
+.fd-card,
+.remediation-section-card,
+.evidence-hex-card,
+.code-template-viewport,
+.score-kpi-card,
+.composite-score-hero,
+.formula-card,
+.dim-card,
+.ledger-card,
+.ai-model-card,
+.ai-panel,
+.mandate-card,
+.pol-table-card,
+.partition-card,
+.deep-card,
+.registry-table-card,
+.retrain-card,
+.telemetry-card,
+.history-table-container,
+.tab-placeholder-card,
+.dashboard-card,
+.metric-card,
+.exec-scorecard-card,
+.pillar-card,
+.recommendations-card,
+.attestation-card,
+.compliance-stats-strip,
+.framework-selector-card,
+.control-row-card,
+.controls-list-container,
+.events-catalog-panel,
+.dissector-inspector-panel,
+.decoded-fields-card,
+.hexdump-container-card,
+.notarization-footer-card,
+.hw-card,
+.xfrm-cache-card,
+.buffer-metric-card,
+.latency-histogram-card,
+.kpi-card,
+.settings-section-card,
+.official-report-card,
+.tamper-seal-section-card,
+.pulse-kpi-card,
+.service-health-card,
+.pref-card,
+.pcap-header-toolbar,
+.upload-card,
+.distribution-card,
+.stage-step-card,
+.dissection-table-wrap,
+.frame-detail-drawer,
+.ipsec-header-banner,
+.ipsec-stat-card,
+.replay-diagnostic-card,
+.sequence-continuity-card,
+.ike-header-banner,
+.state-machine-card,
+.proposal-matrix-card,
+.crypto-header-banner,
+.compliance-spec-card,
+.crypto-matrix-card,
+.traffic-header-banner,
+.classifier-card,
+.features-importance-card,
+.evidence-header-banner,
+.evidence-list-card,
+.forensic-inspector-card,
+.net-dossier-card,
+.preset-card,
+.tb-panel,
+.stream-preview-card,
+.cap-picker-card,
+.delta-card,
+.diff-table-card,
+.certified-hero-bar,
+.settings-hero-bar,
+.health-hero-bar,
+.compliance-header-banner,
+.forensic-top-bar,
+.engine-top-bar,
+.subview-header-card,
+.subview-table-card,
+.artifact-modal-content,
+.artifact-section-card,
+.artifact-kpi-card,
+.artifact-seal-box,
+.no-records-card,
+.no-findings-box,
+.login-glass-card {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 2. Inner sub-boxes, metric chips, panels, tiles, and detail blocks in deep black */
+.sa-vector-card-btn,
+.v-block,
+.vector-box,
+.dossier-box,
+.history-stat-box,
+.dataset-stat-box,
+.registry-stat-box,
+.summary-stat-box,
+.dropzone-container,
+.fingerprint-meta-box,
+.hash-row,
+.tree-item,
+.hex-dump-block,
+.hex-ascii-split-box,
+.replay-bitmask-container,
+.continuity-svg-wrap,
+.exchange-step-card,
+.spi-pair-tracking-bar,
+.proposal-table-wrap,
+.c-table-wrap,
+.rf-class-item,
+.anomaly-score-display,
+.p-specs-box,
+.p-verdict-box,
+.t-stat-cell,
+.d-spec-cell,
+.seal-hash-display-box,
+.attest-cell,
+.signoff-box,
+.hash-display-row,
+.control-title-box,
+.control-detail-body,
+.event-item-card,
+.field-entry,
+.hexdump-body,
+.weight-slider-item,
+.reports-docker-footer,
+.system-docker-footer,
+.rec-box-alert,
+.table-responsive-wrap,
+.input-icon-wrap,
+.svc-icon-box,
+.svc-telemetry-strip,
+.svc-specs-grid,
+.hist-bars-container,
+.table-search-box,
+.audit-grade-box,
+.artifact-toast-banner,
+.artifact-hex-view,
+.artifact-finding-row,
+.auth-metrics-box,
+.vuln-banner-item,
+.canvas-header-bar,
+.svg-wrapper,
+.matrix-table-wrap,
+.matrix-cell,
+.models-table-wrap,
+.confusion-matrix-box,
+.cm-cell,
+.drift-monitor-box,
+.split-cards-grid .split-info-box,
+.class-item-row,
+.feature-row-item,
+.model-row-item,
+.archive-row-item,
+.form-slider-group,
+.telemetry-chip,
+.history-table-header,
+.models-table-header,
+.search-input-wrap,
+.filter-btn,
+.net-filter-wrap,
+.net-select,
+.split-preset-btn,
+.toggle-chip,
+.tb-select,
+.comp-select,
+.subview-metric-box,
+.proof-box,
+.full-sha-box,
+.docker-footer-widget,
+.f-stat-cell,
+.f-search-input-wrap,
+.f-filter-item,
+.cvss-vector-box,
+.impact-cell,
+.template-top-bar,
+.formula-equation-box,
+.ai-kpi-box,
+.corr-item,
+.pol-kpi-pill,
+.sa-kpi-pill,
+.kpi-icon-box,
+.comp-stat-cell,
+.pillar-icon-box,
+.hw-icon-box,
+.xfrm-table-wrap,
+.engine-notice-banner,
+.pulse-notice-banner,
+.settings-notice-banner,
+.download-notice-banner,
+.export-notification-banner,
+.flush-notice-banner,
+.bench-result-banner,
+.offset-pill,
+.offset-tag-strip {
+  background: #08080a !important;
+  background-color: #08080a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 3. Ensure tables, thead, tbody stay cleanly framed inside their black container */
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  background-color: transparent;
+}
+
+/* 4. Left Docker items and navigation buttons in sleek black */
+.docker-nav-item,
+.sec-docker-nav-item,
+.net-docker-nav-item,
+.data-docker-nav-item,
+.reports-docker-nav-item,
+.system-docker-nav-item {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+}
+
+.docker-nav-item:hover,
+.sec-docker-nav-item:hover,
+.net-docker-nav-item:hover,
+.data-docker-nav-item:hover,
+.reports-docker-nav-item:hover,
+.system-docker-nav-item:hover {
+  background: #111116 !important;
+  background-color: #111116 !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.docker-nav-item.active,
+.sec-docker-nav-item.active,
+.net-docker-nav-item.active,
+.data-docker-nav-item.active,
+.reports-docker-nav-item.active,
+.system-docker-nav-item.active {
+  background: #181820 !important;
+  background-color: #181820 !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* 5. Scenario simulation buttons in black */
+.scenario-btn {
+  background: #08080b !important;
+  background-color: #08080b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.scenario-btn:hover {
+  background: #14141a !important;
+  background-color: #14141a !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.scenario-btn.active-baseline,
+.scenario-btn.active-sweet32,
+.scenario-btn.active-replay {
+  background: #1e1e28 !important;
+  background-color: #1e1e28 !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STRICT TWO-COLOR SYSTEM:
+   1. WHITE (#ffffff / crisp white shades) for ALL standard text, labels, icons.
+   2. RED (#ef4444) ONLY for emergency, important, alert, and critical situations.
+   Zero blue, green, yellow, orange, cyan, purple, or other colors allowed.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Base text defaults to white across the entire application */
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea, label, code, pre, td, th, strong, em, b, i, li, ul, ol, svg,
+.home-main-content, .home-main-content * {
+  color: #ffffff !important;
+}
+
+/* Crisp white for headings, values, and emphasis */
+h1, h2, h3, h4, h5, h6, strong, th,
+.workspace-title,
+.brand-name,
+.tab-title,
+.card-heading,
+.stat-val-large,
+.num,
+.dim-name,
+.metric-score-row span,
+.f-sym,
+.f-w {
+  color: #ffffff !important;
+}
+
+/* Muted / secondary copy stays strictly within pure white hue (with clean opacity) */
+p,
+.form-hint,
+.slider-desc,
+.card-subtext,
+.stat-subtext,
+.workspace-subtitle,
+.settings-section-subtitle,
+.pol-header-content p,
+.net-header-content p,
+.xfrm-card-subtitle,
+.detail-pane-title span,
+.p-source,
+.hex-dump-block,
+.tree-val,
+.formula-calc-eval,
+.deployer-text,
+.f-term,
+.df-lbl,
+.kpi-sub-text,
+.telemetry-label,
+.time-cell,
+.operator-role,
+.spec-key,
+.target-sub,
+.ip-cell code,
+.telem-lbl,
+.dim-sub-caption {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* 2. Override all Tailwind utility color classes (convert blue, green, amber, purple to white) */
+.text-sky-300, .text-sky-400, .text-sky-500, .text-sky-600,
+.text-blue-300, .text-blue-400, .text-blue-500, .text-blue-600,
+.text-cyan-300, .text-cyan-400, .text-cyan-500, .text-cyan-600,
+.text-teal-300, .text-teal-400, .text-teal-500,
+.text-emerald-300, .text-emerald-400, .text-emerald-500, .text-emerald-600,
+.text-green-300, .text-green-400, .text-green-500, .text-green-600,
+.text-amber-300, .text-amber-400, .text-amber-500, .text-amber-600,
+.text-yellow-300, .text-yellow-400, .text-yellow-500, .text-yellow-600,
+.text-orange-300, .text-orange-400, .text-orange-500, .text-orange-600,
+.text-purple-300, .text-purple-400, .text-purple-500, .text-purple-600,
+.text-violet-300, .text-violet-400, .text-violet-500,
+.text-pink-300, .text-pink-400, .text-pink-500,
+.text-indigo-300, .text-indigo-400, .text-indigo-500,
+.text-fuchsia-400, .text-fuchsia-500,
+.text-slate-300, .text-slate-400, .text-slate-500,
+.text-gray-300, .text-gray-400, .text-gray-500,
+.text-zinc-300, .text-zinc-400, .text-zinc-500 {
+  color: #ffffff !important;
+}
+
+/* 3. Component color classes mapped strictly to white */
+.cyan, .green, .purple, .amber, .blue, .emerald, .teal, .pink, .indigo, .orange, .yellow,
+.text-cyan, .text-green, .text-purple, .text-amber, .text-blue,
+.stat-val.cyan, .stat-val.green, .stat-val.purple, .stat-val.amber,
+.kpi-val.cyan, .kpi-val.green, .kpi-val.purple,
+.kpi-icon-box.cyan, .kpi-icon-box.green, .kpi-icon-box.purple,
+.score-big.cyan, .score-big.green, .score-big.amber,
+.status-pill.cyan, .status-pill.green, .status-pill.purple, .status-pill.amber, .status-pill.slate,
+.docker-pill-badge.cyan, .docker-pill-badge.green, .docker-pill-badge.purple, .docker-pill-badge.amber,
+.legend-chip.aead, .legend-chip.cbc,
+.proto-chip, .proto-chip.esp, .proto-chip.ah, .proto-chip.ike,
+.hw-tag, .param-chip, .version-tag, .mod-id-pill, .gw-chip,
+.badge-pass, .pass, .optimal, .verified, .compliant, .clean, .valid,
+.pol-kpi-pill.pass .num, .pol-kpi-pill.pass .lbl,
+.pol-status-badge.pass,
+.pol-compliance-badge.all-pass,
+.pol-compliance-badge,
+.verdict-tag.match, .verdict-tag.info,
+.brand-name, .brand-badge, .badge-glow-ico, .brand-icon-glow, .pref-icon, .hist-ico, .purple-icon, .diag-glow-icon, .status-icon,
+.dim-symbol, .dim-score-val, .f-sub, .acc-val, .f1-val, .drift-val {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Sliders and progress bars: white accents */
+input[type="range"] {
+  accent-color: #ffffff !important;
+}
+.buffer-bar-fill,
+.score-progress-fill {
+  background: #ffffff !important;
+}
+
+/* 4. EMERGENCY, IMPORTANT, ALERT, AND CRITICAL SITUATIONS (STRICTLY RED #ef4444) */
+.text-red-400, .text-red-500, .text-red-600,
+.text-rose-400, .text-rose-500, .text-rose-600,
+.critical,
+.badge-critical,
+.status-pill.critical,
+.severity-critical,
+.danger,
+.badge-danger,
+.status-pill.danger,
+.scenario-alert-banner,
+.scenario-alert-banner.danger,
+.scenario-alert-banner.warning,
+.alert-banner,
+.alert-banner-title,
+.alert-banner-msg,
+.alert-banner-icon,
+.alert-resolve-btn,
+.alert,
+.badge-alert,
+.status-pill.alert,
+.emergency,
+.badge-emergency,
+.attack,
+.badge-attack,
+.replay-attack,
+.sweet32,
+.breach,
+.violation,
+.non-compliant,
+.fail,
+.badge-fail,
+.status-pill.fail,
+.text-red,
+.pol-kpi-pill.fail .num,
+.pol-kpi-pill.fail .lbl,
+.pol-status-badge.fail,
+.pol-row.fail td,
+.pol-row.fail code,
+.regression,
+.verdict-tag.regression,
+.drift,
+.verdict-tag.drift,
+.vulnerable,
+.status-pill.vulnerable,
+.legend-chip.vulnerable,
+.warning,
+.badge-warning,
+.status-pill.warning,
+.pol-kpi-pill.warning .num,
+.pol-kpi-pill.warning .lbl,
+.pol-status-badge.warning,
+.pol-row.warning td,
+.pol-row.warning code,
+.weight-total-badge.invalid,
+.dim-points-deducted:not(.clean) {
+  color: #ef4444 !important;
+}
+
+/* Badges for alert/critical have red tint and red borders */
+.badge-critical,
+.status-pill.critical,
+.badge-danger,
+.status-pill.danger,
+.badge-fail,
+.status-pill.fail,
+.pol-status-badge.fail,
+.badge-alert,
+.badge-warning,
+.status-pill.warning,
+.pol-status-badge.warning,
+.verdict-tag.regression,
+.verdict-tag.drift,
+.legend-chip.vulnerable {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Alert banner */
+.scenario-alert-banner {
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+.alert-resolve-btn {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
+
+/* Status dots & glowing lights */
+.telemetry-dot,
+.live-pulse-dot,
+.live-dot,
+.chart-legend-dot,
+.legend-chip .dot,
+.dot {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Red indicator dots for emergency / alert / critical / vulnerable states */
+.telemetry-dot.red,
+.live-dot.red,
+.dot.red,
+.legend-chip.vulnerable .dot,
+.stat-dot.critical,
+.stat-dot.fail,
+.stat-dot.danger {
+  background-color: #ef4444 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.9) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRESERVE EXACT ORIGINAL TOP DOCK TEXT & ICON COLORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.top-dock-hero-section .animated-top-dock__link,
+.top-dock-hero-section .animated-top-dock__link span,
+.animated-top-dock__link,
+.animated-top-dock__link span {
+  color: #e2e8f0 !important;
+}
+
+.top-dock-hero-section .animated-top-dock__link:hover,
+.top-dock-hero-section .animated-top-dock__link:hover span,
+.top-dock-hero-section .animated-top-dock__link[data-dock-near="true"],
+.top-dock-hero-section .animated-top-dock__link[data-dock-near="true"] span,
+.animated-top-dock__link:hover,
+.animated-top-dock__link:hover span,
+.animated-top-dock__link[data-dock-near="true"],
+.animated-top-dock__link[data-dock-near="true"] span {
+  color: #ffffff !important;
+}
+
+.top-dock-hero-section .animated-top-dock__link[aria-pressed="true"],
+.top-dock-hero-section .animated-top-dock__link[aria-pressed="true"] span,
+.top-dock-hero-section .animated-top-dock__link[aria-pressed="true"] .animated-top-dock__icon,
+.animated-top-dock__link[aria-pressed="true"],
+.animated-top-dock__link[aria-pressed="true"] span,
+.animated-top-dock__link[aria-pressed="true"] .animated-top-dock__icon {
+  color: #020617 !important;
+}
+
+.top-dock-hero-section .animated-top-dock__link[aria-pressed="true"] svg,
+.animated-top-dock__link[aria-pressed="true"] svg {
+  stroke: #020617 !important;
+  color: #020617 !important;
+}
+
+.top-dock-hero-section .animated-top-dock__logo svg,
+.animated-top-dock__logo svg {
+  color: #ffffff !important;
+}
+
+/* Run Live Security Audit button and all white buttons across Reports, System, and Overview - crisp solid black text & icon on white button */
+.run-audit-btn,
+.run-audit-btn *,
+.run-audit-btn span,
+.run-audit-btn svg,
+.login-submit-btn,
+.login-submit-btn *,
+.login-submit-btn span,
+.login-submit-btn svg,
+.back-to-overview-btn,
+.back-to-overview-btn *,
+.back-to-overview-btn span,
+.action-btn.download.primary,
+.action-btn.download.primary *,
+.action-btn.download.primary span,
+.action-btn.download.primary svg,
+.modal-btn.primary,
+.modal-btn.primary *,
+.modal-btn.primary span,
+.modal-btn.primary svg,
+.comp-export-btn,
+.comp-export-btn *,
+.comp-export-btn span,
+.comp-export-btn svg,
+.forensic-dl-btn.primary,
+.forensic-dl-btn.primary *,
+.forensic-dl-btn.primary span,
+.forensic-dl-btn.primary svg,
+.audit-btn.verify,
+.audit-btn.verify *,
+.audit-btn.verify span,
+.audit-btn.verify svg,
+.pulse-trigger-btn,
+.pulse-trigger-btn *,
+.pulse-trigger-btn span,
+.pulse-trigger-btn svg,
+.settings-action-btn.primary,
+.settings-action-btn.primary *,
+.settings-action-btn.primary span,
+.settings-action-btn.primary svg,
+.art-action-btn.primary,
+.art-action-btn.primary *,
+.art-action-btn.primary span,
+.art-action-btn.primary svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STRICT TWO-COLOR ENFORCEMENT ACROSS ALL TABS & SUB-MODULES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.home-page-container .text-sky-400,
+.home-page-container .text-cyan-400,
+.home-page-container .text-emerald-400,
+.home-page-container .text-green-400,
+.home-page-container .text-green-500,
+.home-page-container .text-amber-400,
+.home-page-container .text-yellow-400,
+.home-page-container .text-purple-400,
+.home-page-container .text-indigo-400,
+.home-page-container .text-blue-400,
+.home-page-container .text-slate-400,
+.home-page-container .text-slate-500,
+.home-page-container .text-gray-400,
+.home-page-container .text-gray-500,
+.kpi-icon-box.green,
+.kpi-icon-box.cyan,
+.kpi-icon-box.purple,
+.kpi-val.green,
+.kpi-val.cyan,
+.kpi-val.purple,
+.engine-notice-banner,
+.engine-btn.primary {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.home-page-container .text-red-400,
+.home-page-container .text-red-500,
+.home-page-container .text-rose-400,
+.home-page-container .text-rose-500,
+.home-page-container .text-red,
+.kpi-icon-box.red,
+.kpi-val.red,
+.badge-danger,
+.badge-critical {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Ensure no green/cyan/yellow text leaks in badges and statuses */
+.status-pill.pass,
+.status-pill.active,
+.status-pill.success,
+.badge.badge-success,
+.badge.badge-info,
+.status-healthy,
+.status-online {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.status-pill.fail,
+.status-pill.threat,
+.status-pill.error,
+.badge.badge-danger,
+.status-critical,
+.status-warning {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UNIVERSAL SELECT & OPTION DROPDOWN BLACK THEME
+   Prevents OS/browser from rendering white option popups with invisible text
+   ═══════════════════════════════════════════════════════════════════════════ */
+select,
+select option,
+.protocol-filter-select,
+.protocol-filter-select option,
+.f-filter-item select,
+.f-filter-item select option,
+.cap-select,
+.cap-select option,
+.net-select,
+.net-select option,
+.pol-select,
+.pol-select option,
+.form-select,
+.form-select option,
+.form-group select,
+.form-group select option {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KINETIC HOVER HIGHLIGHT & SUBTLE GLOW
+   Enhances existing glass cards and buttons with a sleek micro-illumination
+   ═══════════════════════════════════════════════════════════════════════════ */
+.soc-card:hover,
+.audit-card:hover,
+.compliance-spec-card:hover,
+.score-kpi-card:hover,
+.scenario-btn:hover,
+.f-stat-cell:hover,
+.telemetry-chip:hover,
+.tunnels-table tr:hover td,
+.evidence-row:hover td {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(255, 255, 255, 0.08) !important;
+  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+

@@ -1,0 +1,340 @@
+/* ── IpsecAnalysis.css ── */
+
+.ipsec-analysis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Header Banner */
+.ipsec-header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.35rem 1.65rem;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.ipsec-title-group h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.ipsec-title-group p {
+  font-size: 0.82rem;
+  color: #ffffff;
+  max-width: 720px;
+}
+
+.ipsec-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.spi-picker-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.spi-picker-label {
+  font-size: 0.78rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.spi-select-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.spi-select-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.spi-select-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Overview Stat Cards */
+.ipsec-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .ipsec-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ipsec-stat-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.8);
+  backdrop-filter: none;
+}
+
+.stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.stat-val-large {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.stat-val-large.text-green { color: #ffffff; }
+.stat-val-large.text-cyan { color: #ffffff; }
+.stat-val-large.text-amber { color: #ffffff; }
+.stat-val-large.text-red { color: #ef4444; }
+
+.stat-subtext {
+  font-size: 0.72rem;
+  color: #ffffff;
+}
+
+/* ── Section: RFC 4303 64-Packet Anti-Replay Sliding Window ── */
+.replay-diagnostic-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.diagnostic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dh-left h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.dh-left p {
+  font-size: 0.78rem;
+  color: #ffffff;
+}
+
+.dh-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.inject-sim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inject-sim-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateY(-1px);
+}
+
+/* 64-Bit Bitmask Grid */
+.replay-bitmask-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.bitmask-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.window-base-tag { color: #ffffff; }
+.window-head-tag { color: #ffffff; font-weight: 700; }
+
+.bitmask-64-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 6px;
+}
+
+.bit-cell {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-family: monospace;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.bit-cell.valid {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.bit-cell.duplicate-drop {
+  background: rgba(239, 68, 68, 0.25);
+  border: 1px solid rgba(239, 68, 68, 0.6);
+  color: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.bit-cell.unseen {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bitmask-legend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.72rem;
+  color: #ffffff;
+}
+
+.b-legend-items {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.b-leg {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.b-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+.b-dot.green { background: #ffffff; }
+.b-dot.red { background: #ef4444; }
+.b-dot.dim { background: rgba(255, 255, 255, 0.3); }
+
+/* ── Section: Sequence Continuity Graph ── */
+.sequence-continuity-card {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}
+
+.continuity-svg-wrap {
+  width: 100%;
+  height: 180px;
+  background: #08080a;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.continuity-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.anomaly-alert-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.anomaly-alert-strip.clean {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.anomaly-alert-strip.alert {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
