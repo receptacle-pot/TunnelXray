@@ -3,9 +3,23 @@ import React from 'react';
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
   className?: string;
+  useImage?: boolean;
 }
 
-export function TunnelXrayLogo({ size = 16, className = '', ...props }: LogoProps) {
+export function TunnelXrayLogo({ size = 16, className = '', useImage = false, ...props }: LogoProps) {
+  if (useImage) {
+    return (
+      <img
+        src="/logo.png"
+        alt="TunnelXray Logo"
+        width={size}
+        height={size}
+        className={className}
+        style={{ objectFit: 'contain' }}
+      />
+    );
+  }
+
   return (
     <svg
       width={size}

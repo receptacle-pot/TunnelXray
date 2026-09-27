@@ -31,6 +31,8 @@ audit_screenshots/
 screenshots/
 scratch/
 *.png
+!public/*.png
+!src/assets/*.png
 test-*.mjs
 verify-*.mjs
 screenshot_*.cjs
