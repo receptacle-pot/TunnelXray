@@ -490,47 +490,7 @@
   color: #ffffff;
 }
 
-.dev-code-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  background: rgba(234, 179, 8, 0.1);
-  border: 1px dashed rgba(234, 179, 8, 0.4);
-  border-radius: 7px;
-  padding: 0.4rem 0.65rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 0.4rem;
-}
 
-.dev-code-pill:hover {
-  background: rgba(234, 179, 8, 0.18);
-  border-color: rgba(234, 179, 8, 0.7);
-}
-
-.dev-code-label {
-  font-size: 0.68rem;
-  color: #fde047;
-  font-weight: 600;
-}
-
-.dev-code-digits {
-  font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.1rem 0.35rem;
-  border-radius: 4px;
-}
-
-.dev-code-click {
-  font-size: 0.68rem;
-  color: #fef08a;
-  text-decoration: underline;
-}
 
 .otp-inputs-grid {
   display: grid;

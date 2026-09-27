@@ -180,13 +180,19 @@ export async function initiateRegistration(
 
   const emailRes = await sendEmailRequest(normalizedEmail, fullName, code, 'verification');
 
+  if (!emailRes.success || !emailRes.delivered) {
+    clearPendingOtp();
+    return {
+      success: false,
+      delivered: false,
+      error: emailRes.error || 'Failed to dispatch verification email to your inbox. Please check your email configuration.',
+    };
+  }
+
   return {
     success: true,
-    delivered: !!emailRes.delivered,
-    code: emailRes.delivered ? undefined : code,
-    message: emailRes.delivered
-      ? `A 6-digit verification code has been dispatched to ${normalizedEmail}.`
-      : `Dev Mode: SMTP not configured. Your 6-digit code is: ${code}`,
+    delivered: true,
+    message: `A 6-digit cryptographic verification code has been dispatched to your email inbox: ${normalizedEmail}. Please check your inbox (and spam folder).`,
   };
 }
 
@@ -274,13 +280,18 @@ export async function resendOtp(
     pending.type === 'signup' ? 'verification' : 'password_reset'
   );
 
+  if (!emailRes.success || !emailRes.delivered) {
+    return {
+      success: false,
+      delivered: false,
+      error: emailRes.error || 'Failed to resend verification email. Please try again.',
+    };
+  }
+
   return {
     success: true,
-    delivered: !!emailRes.delivered,
-    code: emailRes.delivered ? undefined : newCode,
-    message: emailRes.delivered
-      ? `A fresh 6-digit code has been sent to ${normalizedEmail}.`
-      : `Dev Mode: Your new 6-digit code is: ${newCode}`,
+    delivered: true,
+    message: `A fresh 6-digit verification code has been dispatched to your email inbox: ${normalizedEmail}.`,
   };
 }
 
@@ -351,13 +362,19 @@ export async function initiatePasswordReset(
 
   const emailRes = await sendEmailRequest(normalizedEmail, user.fullName, code, 'password_reset');
 
+  if (!emailRes.success || !emailRes.delivered) {
+    clearPendingOtp();
+    return {
+      success: false,
+      delivered: false,
+      error: emailRes.error || 'Failed to dispatch password recovery email. Please try again.',
+    };
+  }
+
   return {
     success: true,
-    delivered: !!emailRes.delivered,
-    code: emailRes.delivered ? undefined : code,
-    message: emailRes.delivered
-      ? `Password reset code sent to ${normalizedEmail}.`
-      : `Dev Mode: Password reset code is: ${code}`,
+    delivered: true,
+    message: `A password recovery code has been dispatched to your email inbox: ${normalizedEmail}.`,
   };
 }
 

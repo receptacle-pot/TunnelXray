@@ -64,7 +64,6 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
   // OTP Verification states
   const [otpDigits, setOtpDigits] = useState<string[]>(['', '', '', '', '', '']);
   const otpInputRefs = useRef<(HTMLInputElement | null)[]>([]);
-  const [devOtpCode, setDevOtpCode] = useState<string | null>(null);
   const [resendCooldown, setResendCooldown] = useState(0);
   const [expiryCountdown, setExpiryCountdown] = useState(600); // 10 minutes (in seconds)
 
@@ -295,14 +294,7 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
         return;
       }
 
-      // If email was delivered via SMTP
-      if (result.delivered) {
-        setSuccessMsg(`Verification email dispatched to ${email}. Check your inbox!`);
-        setDevOtpCode(null);
-      } else {
-        setDevOtpCode(result.code || null);
-        setSuccessMsg('Verification code generated. Code displayed below for testing.');
-      }
+      setSuccessMsg(`Verification code dispatched to ${email}. Please check your email inbox!`);
 
       setResendCooldown(60);
       setExpiryCountdown(600);
@@ -369,13 +361,7 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
         return;
       }
 
-      if (result.delivered) {
-        setSuccessMsg(`A fresh verification code has been emailed to ${email}.`);
-        setDevOtpCode(null);
-      } else {
-        setDevOtpCode(result.code || null);
-        setSuccessMsg('Fresh verification code generated.');
-      }
+      setSuccessMsg(`A fresh verification code has been dispatched to ${email}. Please check your inbox.`);
 
       setResendCooldown(60);
       setExpiryCountdown(600);
@@ -409,13 +395,7 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
         return;
       }
 
-      if (result.delivered) {
-        setSuccessMsg(`Reset code dispatched to ${email}. Check your email.`);
-        setDevOtpCode(null);
-      } else {
-        setDevOtpCode(result.code || null);
-        setSuccessMsg('Password reset code generated.');
-      }
+      setSuccessMsg(`Password reset code dispatched to ${email}. Please check your email inbox.`);
 
       setView('reset-password');
     } catch (err: any) {
@@ -461,7 +441,6 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
       setResetOtp('');
       setNewPassword('');
       setConfirmNewPassword('');
-      setDevOtpCode(null);
       setView('signin');
     } catch (err: any) {
       setIsLoading(false);
@@ -477,7 +456,6 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
     setPassword('');
     setConfirmPassword('');
     setName('');
-    setDevOtpCode(null);
     setView('signin');
   };
 
@@ -841,21 +819,6 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
               </p>
             </div>
 
-            {/* Dev Mode Code Preview Banner */}
-            {devOtpCode && (
-              <div
-                className="dev-code-pill"
-                onClick={() => {
-                  const digits = devOtpCode.split('');
-                  setOtpDigits(digits);
-                }}
-                title="Click to auto-populate code"
-              >
-                <span className="dev-code-label">Dev Preview Code:</span>
-                <span className="dev-code-digits">{devOtpCode}</span>
-                <span className="dev-code-click">(Click to Auto-fill)</span>
-              </div>
-            )}
 
             {/* 6 Digit Inputs */}
             <div className="otp-inputs-grid">
@@ -975,17 +938,6 @@ export function LoginCard({ onLoginSuccess }: LoginCardProps = {}) {
               Enter the 6-digit code sent to <strong>{email}</strong> along with your new password.
             </p>
 
-            {devOtpCode && (
-              <div
-                className="dev-code-pill"
-                onClick={() => setResetOtp(devOtpCode)}
-                title="Click to auto-populate code"
-              >
-                <span className="dev-code-label">Recovery Code:</span>
-                <span className="dev-code-digits">{devOtpCode}</span>
-                <span className="dev-code-click">(Click to fill)</span>
-              </div>
-            )}
 
             <div className="input-group">
               <label htmlFor="reset-code">6-Digit Recovery Code</label>

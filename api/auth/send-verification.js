@@ -18,11 +18,10 @@ export default async function handler(req, res) {
   const from = process.env.SMTP_FROM || (user ? `TunnelXray Security <${user}>` : 'TunnelXray Security <no-reply@tunnelxray.io>');
 
   if (!user || !pass) {
-    return res.status(200).json({
-      success: true,
+    return res.status(500).json({
+      success: false,
       delivered: false,
-      code,
-      message: 'SMTP credentials not configured in environment variables.',
+      error: 'SMTP credentials not configured in environment variables.',
     });
   }
 

@@ -46,10 +46,9 @@ export async function sendVerificationEmail({
 
   if (!config.isConfigured) {
     return {
-      success: true,
+      success: false,
       delivered: false,
-      code,
-      message: 'SMTP credentials not configured yet in .env. Code displayed on-screen for development preview.',
+      error: 'SMTP credentials are not configured on the server. Please set SMTP_USER and SMTP_PASS in .env.',
     };
   }
 
@@ -131,7 +130,6 @@ export async function sendVerificationEmail({
     return {
       success: true,
       delivered: true,
-      code,
       message: `Verification code successfully sent to ${to}`,
     };
   } catch (error: any) {
@@ -139,7 +137,6 @@ export async function sendVerificationEmail({
     return {
       success: false,
       delivered: false,
-      code,
       error: error?.message || 'Failed to send email via SMTP server.',
     };
   }

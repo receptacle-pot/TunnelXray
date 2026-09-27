@@ -52,10 +52,9 @@ async function sendVerificationEmail({ to, name, code, type = 'verification' }) 
   const config = getSmtpConfig();
   if (!config.isConfigured) {
     return {
-      success: true,
+      success: false,
       delivered: false,
-      code,
-      message: 'SMTP credentials not configured in production environment variables.',
+      error: 'SMTP credentials not configured in production environment variables.',
     };
   }
 
